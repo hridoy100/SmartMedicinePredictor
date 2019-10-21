@@ -37,7 +37,8 @@ public class LoginController
         String username = userText.getText();
         String password = passwordText.getText();
 
-        if (username.equals(UserData.getUsername()) && password.equals(UserData.getPassword()))
+        //if (username.equals(UserData.getUsername()) && password.equals(UserData.getPassword()))
+        if (UserData.checkIfUserExists(username,password))
         {
             // successful login
             try
@@ -51,7 +52,7 @@ public class LoginController
 
         } else
         {
-            // failed login
+            // failed login , username and password don't match
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Incorrect Credentials");
             alert.setHeaderText("Incorrect Credentials");

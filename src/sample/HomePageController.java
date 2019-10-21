@@ -20,4 +20,13 @@ public class HomePageController {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    void logOutAction(ActionEvent event) {
+        try {
+            main.showLoginPage();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
