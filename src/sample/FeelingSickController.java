@@ -25,6 +25,14 @@ public class FeelingSickController {
     private CheckBox diarrhoea;
     @FXML
     private CheckBox headAche;
+    @FXML
+    private CheckBox bodyPain;
+    @FXML
+    private CheckBox fever;
+    @FXML
+    private CheckBox cough;
+    @FXML
+    private CheckBox cold;
 
 
     private Main main;
@@ -57,7 +65,8 @@ public class FeelingSickController {
             alert.showAndWait();
         }
         else if(vomiting.isSelected()==false && gastric.isSelected()==false && sleep.isSelected()==false &&
-                looseMotion.isSelected()==false && diarrhoea.isSelected()==false && headAche.isSelected()==false){
+                looseMotion.isSelected()==false && diarrhoea.isSelected()==false && headAche.isSelected()==false
+                && fever.isSelected()==false && cough.isSelected()==false && cold.isSelected()==false){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Checkbox not selected");
             alert.setHeaderText("Please select at least one checkbox.");
@@ -83,6 +92,18 @@ public class FeelingSickController {
             }
             if(headAche.isSelected()){
                 selectedProblems.add("Head Ache");
+            }
+            if(bodyPain.isSelected()){
+                selectedProblems.add("Body Pain");
+            }
+            if(fever.isSelected()){
+                selectedProblems.add("Fever");
+            }
+            if(cough.isSelected()){
+                selectedProblems.add("Cough");
+            }
+            if(cold.isSelected()){
+                selectedProblems.add("Cold");
             }
             try
             {

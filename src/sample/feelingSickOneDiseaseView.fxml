@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="629.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FeelingSickController">
+   <children>
+      <Label layoutX="184.0" layoutY="6.0" text="Problem Description">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <GridPane layoutY="87.0" prefHeight="43.0" prefWidth="600.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="430.0" minWidth="10.0" prefWidth="300.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Body Temperature:" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
+               <children>
+                  <TextField fx:id="temperature" />
+                  <Label text="°F">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <VBox layoutX="255.0" layoutY="189.0" prefHeight="200.0" prefWidth="155.0" spacing="10.0">
+         <children>
+            <RadioButton mnemonicParsing="false" text="জ্বর" />
+            <RadioButton mnemonicParsing="false" text="বমি বমি ভাব" />
+            <RadioButton mnemonicParsing="false" text="পেটে গ্যাস" />
+            <RadioButton mnemonicParsing="false" text="ঘুম হয়না" />
+            <RadioButton mnemonicParsing="false" text="পাতলা পায়খানা" />
+            <RadioButton mnemonicParsing="false" text="ডায়রিয়া" />
+            <RadioButton mnemonicParsing="false" text="মাথা ব্যথা" />
+            <RadioButton layoutX="10.0" layoutY="196.0" mnemonicParsing="false" text="শরীর ব্যথা" />
+            <RadioButton layoutX="10.0" layoutY="227.0" mnemonicParsing="false" text="কশা পায়খানা" />
+            <RadioButton layoutX="10.0" layoutY="258.0" mnemonicParsing="false" text="কাশি" />
+            <RadioButton layoutX="10.0" layoutY="289.0" mnemonicParsing="false" text="সর্দি" />
+         </children>
+      </VBox>
+      <Label layoutX="226.0" layoutY="159.0" text="Identify Your Problem:" />
+      <GridPane layoutY="585.0" prefHeight="30.0" prefWidth="600.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#submitButtonAction" text="Submit -&gt;" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" onAction="#backButtonAction" text="&lt;- Back" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
