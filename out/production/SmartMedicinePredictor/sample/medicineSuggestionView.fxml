@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -10,24 +12,27 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MedicineSuggestionController">
+<AnchorPane prefHeight="657.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MedicineSuggestionController">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="225.0" pickOnBounds="true" preserveRatio="true">
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #51e879;">
+         <children>
+            <Label text="Suggested Medicine">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="225.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/medicine_suggestion.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="202.0" layoutY="185.0" text="Suggested Medicine:">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Label>
       <Label layoutX="65.0" layoutY="224.0" text="According to our system we suggest you take the following medicines.." />
-      <GridPane layoutX="166.0" layoutY="266.0" prefHeight="120.0" prefWidth="269.0">
+      <GridPane layoutX="118.0" layoutY="272.0" prefHeight="120.0" prefWidth="364.0">
         <columnConstraints>
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="198.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -39,20 +44,38 @@
             <Label fx:id="medicine1" text="Medicine 1" textFill="#1b80e3" GridPane.rowIndex="1" />
             <Label fx:id="medicine2" text="Medicine 2" textFill="#0acd4b" GridPane.rowIndex="2" />
             <Label fx:id="medicine3" text="Medicine 3" textFill="#e18d10" GridPane.rowIndex="3" />
-            <Label text="Medicine Name" />
-            <Label text="Per Day Dose" GridPane.columnIndex="1" />
-            <Label fx:id="medicine1Period" text="0-0-0" textFill="#1b80e3" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label fx:id="medicine2Period" text="0-0-0" textFill="#0acd4b" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label fx:id="medicine3Period" text="0-0-0" textFill="#e18d10" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Medicine Name">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font></Label>
+            <Label text="Per Day Dose" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font></Label>
+            <Label fx:id="medicine1Period" text="0-0-0" textFill="#1b80e3" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="medicine2Period" text="0-0-0" textFill="#0acd4b" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="medicine3Period" text="0-0-0" textFill="#e18d10" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <HBox alignment="TOP_CENTER" layoutY="408.0" prefHeight="60.0" prefWidth="600.0">
+      <HBox alignment="TOP_CENTER" layoutY="408.0" prefHeight="185.0" prefWidth="600.0">
          <children>
-            <Label fx:id="medicineTotalDays" text="Take these medicines for 7 days.">
-               <font>
-                  <Font size="18.0" />
-               </font>
+            <Label fx:id="medicineTotalDays" text="Take these medicines for 7 days." textFill="#e5505b" textOverrun="CLIP" wrapText="true">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
             </Label>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" layoutY="593.0" prefHeight="70.0" prefWidth="600.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#backButtonAction" style="-fx-background-color: #51e879; -fx-background-radius: 20;" text="&lt;&lt; Back">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
          </children>
       </HBox>
    </children>

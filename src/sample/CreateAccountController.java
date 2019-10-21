@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import util.UserData;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class CreateAccountController {
     @FXML
     private TextField nameField;
     @FXML
-    private TextField ageField;
+    private DatePicker birthDatePicker;
     @FXML
     private TextField emailField;
     @FXML
@@ -61,14 +62,14 @@ public class CreateAccountController {
     void createAccount(ActionEvent event)
     {
         String name = nameField.getText();
-        String age = ageField.getText();
+        String birthDate = String.valueOf(birthDatePicker.getValue());
         String address = addressField.getText();
         String phoneNo = phoneNoField.getText();
         String email = emailField.getText();
         String password = passwordField.getText();
 
 
-        if(name.length()==0 || age.length()==0 || address.length()==0 || phoneNo.length()==0
+        if(name.length()==0 || birthDate.length()==0 || address.length()==0 || phoneNo.length()==0
                 || email.length()==0 || gender.length()==0)
         {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -82,13 +83,6 @@ public class CreateAccountController {
             alert.setTitle("Already Exists");
             alert.setHeaderText("Email address already exists.");
             alert.setContentText("This email id already exists. Please insert another email address.");
-            alert.showAndWait();
-        }
-        else if(isNumeric(age) == false){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Age Must be Integer");
-            alert.setHeaderText("Integer value required");
-            alert.setContentText("You must enter decimal value in age field.");
             alert.showAndWait();
         }
         else if(isNumeric(phoneNo) == false){
@@ -127,7 +121,7 @@ public class CreateAccountController {
 //            }
 
             //create new account. add it to accountData file..
-            String fullData = name+":"+age+":"+address+":"+phoneNo+":"+email+":"+password;
+            String fullData = name+":"+birthDate+":"+address+":"+phoneNo+":"+email+":"+password;
             UserData.writeToFile(fullData, "accountData.txt");
 
             //write only username and password in loginData file..
