@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import util.SendEmailSMTP;
+import util.UserData;
 
 import java.util.ArrayList;
 
@@ -49,6 +51,13 @@ public class MedicineSuggestionController {
                 medicineTotalDays.setText("Take these medicines whenever you have an headache. " +
                         "If after taking the medicine you still have head ache continuously for more than 3 days," +
                         " consult a specialist.");
+
+
+                String message = "Medicine1: "+medicine1.getText()+ "\t"+"Per Day Use: "+medicine1Period+
+                        "\n\n"+medicineTotalDays;
+                System.out.println("User name: " +UserData.getUsername());
+                //SendEmailSMTP.sendEmail(message,UserData.getUsername());
+
             }
             else if(problems.get(0).equals("Sleep")){
                 medicine1.setText("Filfresh®");

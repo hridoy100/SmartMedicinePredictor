@@ -40,6 +40,7 @@ public class LoginController
         //if (username.equals(UserData.getUsername()) && password.equals(UserData.getPassword()))
         if (UserData.checkIfUserExists(username,password))
         {
+            UserData.setUsername(username);
             // successful login
             try
             {

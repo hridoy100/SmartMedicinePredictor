@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserData {
-    public static String username="root";
-    public static String password="admin";
+    public static String username="";
+    public static String password="";
     public static String fileName;
 
     public static String getUsername() {
